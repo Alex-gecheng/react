@@ -7,7 +7,21 @@ npm create vite@latest first_app
 选择  react + ts
 ```
 
-<img src="C:/Users/lyp/AppData/Roaming/Typora/typora-user-images/image-20260304140611801.png" alt="image-20260304140611801" style="zoom: 50%;" /><img src="https://raw.githubusercontent.com/Alex-gecheng/Typora_images/main/img/image-20260304140628139.png" alt="image-20260304140628139" style="zoom: 50%;" />
+<img src="https://raw.githubusercontent.com/Alex-gecheng/Typora_images/main/img/image-20260304140611801.png" alt="image-20260304140611801" style="zoom: 50%;" />
+
+<img src="https://raw.githubusercontent.com/Alex-gecheng/Typora_images/main/img/image-20260304140628139.png" alt="image-20260304140628139" style="zoom: 50%;" />
+
+运行项目
+
+```
+npm run dev
+```
+
+打包项目
+
+```
+npm run build
+```
 
 原始界面
 
@@ -43,6 +57,12 @@ FIRST_APP
 └── vite.config.ts    /Vite 配置文件，配置端口和代理
 ````
 
+安装模块
+
+```
+npm install three
+```
+
 * 打包和不打包有什么区别？
 
   组件用到的图片 → 放 `src/assets `   可以被import ,浏览器缓存更新不会出问题,没用到不会被打包
@@ -51,7 +71,21 @@ FIRST_APP
 
 * 单页应用（SPA）
 
-  只有一个 `index.html`，只有一个root挂载点，react控制页面内容，根据不同的路由渲染不同的组件
+  只有一个 `index.html`，只有一个root挂载点，react控制页面内容，根据不同的路由渲染不同的组件,页面不会刷新
+
+  整体流程图
+
+  ```
+  index.html
+     ↓
+  main.tsx
+     ↓
+  App.tsx
+     ↓
+  子组件
+  ```
+
+  
 
 ### 1.2 安装模块库
 
@@ -90,7 +124,6 @@ import Contact from "./pages/Contact";
 
 function App(){
   return (
-    <>
       <nav>
         <Link to="/">首页</Link> | 
         <Link to="/about">关于</Link> | 
@@ -135,7 +168,7 @@ export default function TimeCard() {
 
 
 
-hooks  可复用的状态逻辑
+hooks  可复用的状态逻辑      分离ui和组件
 
 - 保存状态
 - 状态改变时自动刷新 UI
