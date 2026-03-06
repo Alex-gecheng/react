@@ -144,7 +144,7 @@ function App(){
 
 ### 1.4组件Components和hooks
 
-组件  某一块界面和逻辑
+组件  某一块界面和逻辑 函数->返回ui
 
 ```
 import { useTime } from "../hooks/useTime";
@@ -173,7 +173,7 @@ hooks  可复用的状态逻辑      分离ui和组件
 - 保存状态
 - 状态改变时自动刷新 UI
 - 控制副作用 
-- 主要抽离出来可复用 
+- 主要抽离出来可复用 ：    请求接口  定时器  窗口大小监听  滚动监听
 
 ```
 import { useState,useEffect } from "react";
@@ -216,6 +216,28 @@ npm install zustand
 ```
 
 之前的状态`const [count, setCount] = useState(0);` 只能在当前组件使用，组件间传值需要使用props，多层传值不方便
+
+```
+import React from "react"
+
+type Props = {
+  name: string
+  age: number
+}
+
+function UserCard(props: Props) {
+  return (
+    <div>
+      <h2>姓名: {props.name}</h2>
+      <p>年龄: {props.age}</p>
+    </div>
+  )
+}
+
+export default UserCard
+父组件app.tsx使用
+<UserCard name="Tom" age={25} />
+```
 
 * 全局状态管理工具 Zustand     实现多个组件共享状态
 
