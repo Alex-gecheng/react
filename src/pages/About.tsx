@@ -8,7 +8,7 @@ export default function About() {
 
       <button onClick={increase}>+1</button>
       <button onClick={decrease}>-1</button>
-      <p>这是关于我的介绍页面，可以写项目背景或者个人信息。</p>
+      <p>这是关于面，可以写项目背景或者个人信息。</p>
     </div>
   );
 }
